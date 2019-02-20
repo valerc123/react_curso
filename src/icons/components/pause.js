@@ -8,4 +8,4 @@ function Pause(props){
     </Icon>
     )
 }
-export default Pause
+export default Pause;

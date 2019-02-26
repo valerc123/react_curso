@@ -14,12 +14,13 @@ class Media extends PureComponent{
         // author: this.props.author //toma el valor del index
         author: 'leonidas' //le defino un valor
     } 
-    // handleClick = (event) => {
+    handleClick = (event) => {
     //     // console.log(this.props.title);
     //     this.setState({ //cambia el estado del componente
     //         author: 'ricardo celis'
     //     })
-    // }
+    this.props.openModal(this.props);//envia todas las propiedades del video (titulo, cover, autor, src)
+    }
     render(){
         let {title, author, cover} = this.props;
         const styles = {
@@ -34,7 +35,7 @@ class Media extends PureComponent{
         //html del componente
         return(
             
-            <div className='Media' onClick={this.props.handleClick}>
+            <div className='Media' onClick={this.handleClick}>
             <div className='Media-cover'>
                 <img className='Media-image'
                  src={cover}

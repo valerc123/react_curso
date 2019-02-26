@@ -26,16 +26,22 @@ class Video extends Component{
 
     render(){
         const {
-            handleLoadedMetaData,
+            handleLoadedMetadata,
+            handleTimeUpdate,
+            handleSeeking,
+            handleSeeked
         } = this.props;
         return(
             <div className="Video">
                 <video
-                    muted
+                muted
                     src={this.props.src}
                     autoPlay={this.props.autoplay}
                     ref={this.setRef}
-                    onLoadedMetaData={handleLoadedMetaData}
+                    onLoadedMetadata={handleLoadedMetadata}
+                    onTimeUpdate={handleTimeUpdate} //cada vez que se actualice el tiempo
+                    onSeeking={handleSeeking} //se esta moviendo
+                    onSeeked={handleSeeked} //se movió (terminó el moviento)
                 />
             </div> 
         )

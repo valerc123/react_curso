@@ -6,7 +6,10 @@ function Modal(props){
         <div className="Modal">
         {/*this is a modal */}
             {props.children}
-            <button onClick={props.handleClick}>Cerrar</button> 
+            <button 
+            onClick={props.handleClick}
+            className="Modal-close"
+            /> 
         </div> 
     )
 }
